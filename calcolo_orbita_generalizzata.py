@@ -20,14 +20,6 @@ err = 1/prec
 #Qui sono presenti tutte le funzioni di cui ho bisogno per la simulazione
 m = lambda r: A*np.array([np.log(1+r)-r/(1+r)]) #Oppenheimer-Volkoff
 dr = lambda r: -np.array(np.maximum([ ((1+r)**(A/r))*E**2 -(L)**2/r**2 ],0))**(1/2)*np.array(np.maximum([(1-2*np.array(m(r))/r)],0))**(1/2) #Oppenheimer-Volkoff
-def dr_(r):
-    if (((1+r)**(A/r))*E**2 -(L)**2/r**2 < 0).any():
-        print("NO")
-        return 0
-    if (1-2*np.array(m(r))/r < 0).any():
-        print("NO^2")
-        return 0
-    return -np.array(np.maximum(((1+r)**(A/r))*E**2 -(L)**2/r**2,0))**(1/2)*np.array(np.maximum((1-2*np.array(m(r))/r),0))**(1/2) #Oppenheimer-Volkoff
 pot = lambda r: -A*np.log(1+r)/r
 dphi = lambda r: L*r**(-2)
 dt = lambda r: -E*np.e**(-2*pot(r))
