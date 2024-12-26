@@ -202,7 +202,7 @@ for i in range(len(angs)):
     plotL.set_xlabel("Distanza dalla lente r ($r_{s}$ unit)")
     plotL.set_ylabel("L(r)")
     plotL.plot(racc[0],racc[1],"o")
-    plt.savefig("C:/Users/raf/Documents/Programmi/tesi/generalizzata/plot" + str(int(xi*(180/np.pi))) + ".png")
+    plt.savefig("" + str(int(xi*(180/np.pi))) + ".png")
 
     print(c)#Conta giri
     c+=1
@@ -235,4 +235,4 @@ for i in range(len(angs)):
         pfluct.plot(rn,beta,"r")
     except:
         print("no interferenza")
-    plt.savefig("C:/Users/raf/Documents/Programmi/tesi/generalizzata/plot" + str(int(xi*(180/np.pi))) + "_fluct.png")
+    plt.savefig("" + str(int(xi*(180/np.pi))) + "_fluct.png")
